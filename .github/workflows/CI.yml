@@ -30,15 +30,7 @@ jobs:
     secrets:
       TOKEN: ${{ secrets.TOKEN }}
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-
-  coverage:
-    needs: format
-    uses: Geode-solutions/actions/.github/workflows/coverage.yml@master
-    with:
-      repos: OpenGeode
-    secrets:
-      TOKEN: ${{ secrets.TOKEN }}  
-  
+ 
   build-windows:
     needs: format
     uses: Geode-solutions/actions/.github/workflows/ci-windows.yml@master
