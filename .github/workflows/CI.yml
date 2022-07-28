@@ -10,34 +10,3 @@ jobs:
     secrets:
       TOKEN: ${{ secrets.TOKEN }}
       
-  build-linux:
-    needs: format
-    uses: francoisbonneau/actions/.github/workflows/ci-linux.yml@master
-    with:
-      repos: OpenGeode
-    secrets:
-      TOKEN: ${{ secrets.TOKEN }}
-
-  build-linux-python:
-    needs: format
-    uses: francoisbonneau/actions/.github/workflows/ci-linux-python.yml@master
-    with:
-      name: OPENGEODE_MYMODULE
-      repos: OpenGeode
-    secrets:
-      TOKEN: ${{ secrets.TOKEN }}
- 
-  build-windows:
-    needs: format
-    uses: francoisbonneau/actions/.github/workflows/ci-windows.yml@master
-    with:
-      name: OPENGEODE_MYMODULE
-      repos: OpenGeode
-    secrets:
-      TOKEN: ${{ secrets.TOKEN }}
-        
-  semantic-release:
-    needs: [build-linux, build-linux-python, build-windows]
-    uses: francoisbonneau/actions/.github/workflows/release.yml@master
-    secrets:
-      TOKEN: ${{ secrets.TOKEN }}
