@@ -6,7 +6,7 @@ on:
 
 jobs:     
   release-linux:
-    uses: francoisbonneau/actions/.github/workflows/cd-linux.yml@master
+    uses: francoisbonneau/my_actions/.github/workflows/opengeode_cd_linux.yml@master
     with:
       name: OPENGEODE_MYMODULE
       repos: OpenGeode
@@ -14,7 +14,7 @@ jobs:
       TOKEN: ${{ secrets.TOKEN }}
 
   release-linux-python:
-    uses: francoisbonneau/actions/.github/workflows/cd-linux-python.yml@master
+    uses: francoisbonneau/my_actions/.github/workflows/opengeode_cd_linux_python.yml@master
     with:
       name: OPENGEODE_MYMODULE
       repos: OpenGeode
@@ -22,7 +22,7 @@ jobs:
       TOKEN: ${{ secrets.TOKEN }}
 
   release-windows:
-    uses: francoisbonneau/actions/.github/workflows/cd-windows.yml@master
+    uses: francoisbonneau/my_actions/.github/workflows/opengeode_cd_windows.yml@master
     with:
       name: OPENGEODE_MYMODULE
       repos: OpenGeode
@@ -30,7 +30,7 @@ jobs:
       TOKEN: ${{ secrets.TOKEN }}
 
   release-windows-python:
-    uses: francoisbonneau/actions/.github/workflows/cd-windows-python.yml@master
+    uses: francoisbonneau/my_actions/.github/workflows/opengeode_cd_windows_python.yml@master
     with:
       name: OPENGEODE_MYMODULE
       repos: OpenGeode
