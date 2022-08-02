@@ -4,8 +4,6 @@ on:
   push:
   pull_request:
 
-
-      
 jobs:
   format:
     uses: francoisbonneau/my_actions/.github/workflows/format.yml@master
