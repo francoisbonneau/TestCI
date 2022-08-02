@@ -38,6 +38,6 @@ jobs:
         
   semantic-release:
     needs: [build-linux, build-linux-python, build-windows]
-    uses: francoisbonneau/my_actions/.github/workflows/release.yml@master
+    uses: francoisbonneau/my_actions/.github/workflows/semantic_release.yml@master
     secrets:
       TOKEN: ${{ secrets.TOKEN }}
