@@ -42,8 +42,3 @@ Have also a look at this [OpenGeode] documentation: https://docs.geode-solutions
 For questions and support please use the official [slack](https://slackin-opengeode.herokuapp.com) and go to the channel #module_template. The issue list of this repo is exclusively for bug reports and feature requests. 
 
 
-## License
-
-[MIT](https://opensource.org/licenses/MIT)
-
-Copyright (c) 2019 - 2022, Geode-solutions
