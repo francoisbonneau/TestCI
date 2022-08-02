@@ -6,7 +6,7 @@ on:
 
 jobs:
   format:
-    uses: francoisbonneau/actions/.github/workflows/format.yml@master
+    uses: Geode-solutions/actions/.github/workflows/format.yml@master
     secrets:
       TOKEN: ${{ secrets.TOKEN }}
       
