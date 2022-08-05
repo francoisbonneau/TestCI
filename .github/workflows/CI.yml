@@ -5,34 +5,39 @@ on:
   pull_request:
 
 jobs:
+  format:
+    uses: francoisbonneau/my_actions/.github/workflows/format.yml@master
+    secrets:
+      TOKEN: ${{ secrets.TOKEN }}
+
   build-linux:
     uses: ring-team/actions/.github/workflows/opengeode_ci_linux.yml@master
     with:
-      repos: OpenGeode;OpenGeode-FractModel
+      repos: OpenGeode
     secrets:
       TOKEN: ${{ secrets.TOKEN }}
 
 
-#  build-linux-python:
-#    needs: format
-#    uses: ring-team/actions/.github/workflows/opengeode_ci_linux_python.yml@master
-#    with:
-#      name: OPENGEODE_MYMODULE
-#      repos: OpenGeode/Geode-solutions;OpenGeode-FractModel/ring-team
-#    secrets:
-#      TOKEN: ${{ secrets.TOKEN }}
-# 
-#  build-windows:
-#    needs: format
-#    uses: ring-team/actions/.github/workflows/opengeode_ci_windows.yml@master
-#    with:
-#      name: OPENGEODE_MYMODULE
-#      repos: OpenGeode/Geode-solutions;OpenGeode-FractModel/ring-team
-#    secrets:
-#      TOKEN: ${{ secrets.TOKEN }}
-#        
-#  semantic-release:
-#    needs: [build-linux, build-linux-python, build-windows]
-#    uses: ring-team/actions/.github/workflows/semantic_release.yml@master
-#    secrets:
-#      TOKEN: ${{ secrets.TOKEN }}
+  build-linux-python:
+    needs: format
+    uses: ring-team/actions/.github/workflows/opengeode_ci_linux_python.yml@master
+    with:
+      name: OPENGEODE_MYMODULE
+      repos: OpenGeode
+    secrets:
+      TOKEN: ${{ secrets.TOKEN }}
+ 
+  build-windows:
+    needs: format
+    uses: ring-team/actions/.github/workflows/opengeode_ci_windows.yml@master
+    with:
+      name: OPENGEODE_MYMODULE
+      repos: OpenGeode
+    secrets:
+      TOKEN: ${{ secrets.TOKEN }}
+        
+  semantic-release:
+    needs: [build-linux, build-linux-python, build-windows]
+    uses: ring-team/actions/.github/workflows/semantic_release.yml@master
+    secrets:
+      TOKEN: ${{ secrets.TOKEN }}
