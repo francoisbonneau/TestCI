@@ -8,7 +8,7 @@ jobs:
   build-linux:
     uses: ring-team/actions/.github/workflows/opengeode_ci_linux.yml@master
     with:
-      repos: OpenGeode/Geode-solutions;OpenGeode-FractModel/ring-team
+      repos: OpenGeode;OpenGeode-FractModel
     secrets:
       TOKEN: ${{ secrets.TOKEN }}
 
