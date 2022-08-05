@@ -5,10 +5,10 @@ on:
   pull_request:
 
 jobs:
-  format:
-    uses: ring-team/actions/.github/workflows/format.yml@master
-    secrets:
-      TOKEN: ${{ secrets.TOKEN }}
+#  format:
+#    uses: ring-team/actions/.github/workflows/format.yml@master
+#    secrets:
+#      TOKEN: ${{ secrets.TOKEN }}
 
   build-linux:
     needs: format
