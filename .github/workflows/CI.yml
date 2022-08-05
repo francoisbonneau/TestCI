@@ -6,38 +6,38 @@ on:
 
 jobs:
   format:
-    uses: francoisbonneau/my_actions/.github/workflows/format.yml@master
+    uses: ring-team/actions/.github/workflows/format.yml@master
     secrets:
       TOKEN: ${{ secrets.TOKEN }}
 
   build-linux:
     needs: format
-    uses: francoisbonneau/my_actions/.github/workflows/opengeode_ci_linux.yml@master
+    uses: ring-team/actions/.github/workflows/opengeode_ci_linux.yml@master
     with:
-      repos: OpenGeode
+      repos: OpenGeode;OpenGeode-FractModel
     secrets:
       TOKEN: ${{ secrets.TOKEN }}
 
   build-linux-python:
     needs: format
-    uses: francoisbonneau/my_actions/.github/workflows/opengeode_ci_linux_python.yml@master
+    uses: ring-team/actions/.github/workflows/opengeode_ci_linux_python.yml@master
     with:
       name: OPENGEODE_MYMODULE
-      repos: OpenGeode
+      repos: OpenGeode;OpenGeode-FractModel
     secrets:
       TOKEN: ${{ secrets.TOKEN }}
  
   build-windows:
     needs: format
-    uses: francoisbonneau/my_actions/.github/workflows/opengeode_ci_windows.yml@master
+    uses: ring-team/actions/.github/workflows/opengeode_ci_windows.yml@master
     with:
       name: OPENGEODE_MYMODULE
-      repos: OpenGeode
+      repos: OpenGeode;OpenGeode-FractModel
     secrets:
       TOKEN: ${{ secrets.TOKEN }}
         
   semantic-release:
     needs: [build-linux, build-linux-python, build-windows]
-    uses: francoisbonneau/my_actions/.github/workflows/semantic_release.yml@master
+    uses: ring-team/actions/.github/workflows/semantic_release.yml@master
     secrets:
       TOKEN: ${{ secrets.TOKEN }}
