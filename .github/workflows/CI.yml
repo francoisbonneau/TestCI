@@ -12,7 +12,6 @@ jobs:
     secrets:
       TOKEN: ${{ secrets.TOKEN }}
 
-
 #  build-linux-python:
 #    needs: format
 #    uses: ring-team/actions/.github/workflows/opengeode_ci_linux_python.yml@master
