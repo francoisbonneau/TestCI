@@ -5,11 +5,6 @@ on:
   pull_request:
 
 jobs:
-#  format:
-#    uses: ring-team/actions/.github/workflows/format.yml@master
-#    secrets:
-#      TOKEN: ${{ secrets.TOKEN }}
-
   build-linux:
     needs: format
     uses: ring-team/actions/.github/workflows/opengeode_ci_linux.yml@master
