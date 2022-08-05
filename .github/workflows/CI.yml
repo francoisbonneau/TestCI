@@ -6,7 +6,6 @@ on:
 
 jobs:
   build-linux:
-    needs: format
     uses: ring-team/actions/.github/workflows/opengeode_ci_linux.yml@master
     with:
       repos: OpenGeode/Geode-solutions;OpenGeode-FractModel/ring-team
